@@ -1,8 +1,0 @@
-<div class='Kevin'><div class='name'>Kevin</div><div class='message'>Well hello </div></div>
-<div class='Kevin'><div class='name'>Kevin</div><div class='message'>How's it tootin'? </div></div>
-<div class='Guest'><div class='name'>Guest</div><div class='message'>Hey there! </div></div>
-<div class='Kevin'><div class='name'>Kevin</div><div class='message'>Coooool </div></div>
-<div class='Guest'><div class='name'>Guest</div><div class='message'>It works!! </div></div>
-<div class='Kevin'><div class='name'>Kevin</div><div class='message'>Let's see if a smile face breaks this &eth;Ÿ˜ </div></div>
-<div class='Kevin'><div class='name'>Kevin</div><div class='message'>Yeah </div></div>
-<div class='Guest'><div class='name'>Guest</div><div class='message'>Can I send a &eth;Ÿ‘? </div></div>
