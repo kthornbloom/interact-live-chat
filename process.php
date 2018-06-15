@@ -3,13 +3,7 @@
 $function = $_POST['function'];
 
 $log = array();
-
-$chatid = '4';
-/*
-if(isset($_GET['chatid'])) {*/
-	//$chatid = htmlspecialchars($_GET["chatid"]);
-//echo "<script type='text/javascript'>alert('$chatid');</script>";
-
+$chatid = $_POST['chatid'];
 
 switch ($function) {
 	

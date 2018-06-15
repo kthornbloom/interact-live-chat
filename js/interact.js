@@ -9,6 +9,16 @@ var state;
 var mes;
 var file;
 
+url = new URL(window.location.href);
+
+if (url.searchParams.get('chatid')) {
+	var chatid = url.searchParams.get('chatid');
+} else {
+	var chatid = new Date().getTime();
+	var url = document.location.href+"?chatid="+chatid;
+	document.location = url;
+}
+
 function Chat () {
 	this.update = updateChat;
 	this.send = sendChat;
@@ -26,7 +36,8 @@ function getStateOfChat(){
 				 url: "process.php",
 				 data: {  
 							'function': 'getState',
-						'file': file
+						'file': file,
+						'chatid':chatid
 						},
 				 dataType: "json",
 			
@@ -47,7 +58,8 @@ function initChat(){
 			data: {
 						'function': 'update',
 					'state': state,
-					'file': file
+					'file': file,
+					'chatid':chatid
 					},
 			dataType: "json",
 			success: function(data){
@@ -72,7 +84,8 @@ function updateChat(){
 				 data: {  
 						'function': 'update',
 						'state': state,
-						'file': file
+						'file': file,
+						'chatid':chatid
 						},
 				 dataType: "json",
 				 success: function(data){
@@ -107,10 +120,11 @@ function sendChat(message, nickname){
 			 type: "POST",
 			 url: "process.php",
 			 data: {  
-						'function': 'send',
+					'function': 'send',
 					'message': message,
 					'nickname': nickname,
-					'file': file
+					'file': file,
+					'chatid':chatid
 				 },
 			 dataType: "json",
 			 success: function(data){

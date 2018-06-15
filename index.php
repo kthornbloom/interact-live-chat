@@ -6,26 +6,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="tomato">
 <title>Chat</title>
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="css/reset.css" type="text/css" />
+<link rel="stylesheet" href="css/interact.css" type="text/css" />
 </head>
 
+
+
 <body onload="setInterval('chat.update()', 1000)">
-	<div class="wrap">
-<div id="bg"></div>
-<div class="wrapper">
-	<div id="chat-area"></div>
-	
-	<form id="send-message-area">
-		<textarea id="sendie" maxlength = '100' placeholder="Your Message"></textarea>
-	</form>
-</div>
-</div>
+	<div id="page">
+		<div id="background"></div>
+		<div id="wrapper">
+			<div id="chat-name">LIVE CHAT</div>
+			<div id="chat-area"></div>
+			
+			<form id="send-message-area">
+				<textarea id="sendie" maxlength = '100' placeholder="Your Message"></textarea>
+			</form>
+		</div>
+		</div>
 
 	<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-	<script type="text/javascript" src="chat.js"></script>
+	<script type="text/javascript" src="js/interact.js"></script>
 	<script type="text/javascript">
 	
 		// ask user for name with popup prompt    
@@ -45,6 +49,16 @@
 		$(function() {
 		
 			 chat.getState(); 
+
+			 <?php
+/*
+			$chatid = '';
+			if(isset($_GET['chatid'])) {
+				$chatid = htmlspecialchars($_GET["chatid"]);
+				echo "<script type='text/javascript'>alert('$chatid');</script>";
+			}
+*/
+			?>
 			 
 			 // watch textarea for key presses
 			 $("#sendie").keydown(function(event) {  
