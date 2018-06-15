@@ -40,9 +40,6 @@
 		// strip tags
 		name = name.replace(/(<([^>]+)>)/ig,"");
 		
-		// display name on page
-		$("#name-area").html("You are: <span>" + name + "</span>");
-		
 		// kick off chat
 		var chat =  new Chat();
 		$(function() {

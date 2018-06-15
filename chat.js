@@ -82,8 +82,7 @@ function updateChat(){
 							document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
 							if(window.Notification && Notification.permission !== "denied") {
 								Notification.requestPermission(function(status) {  // status is "granted", if accepted by user
-								var n = new Notification('New Message', { 
-									body: data.text[i],
+								var n = new Notification('New Message', {
 									icon: 'chat.png' // optional
 								}); 
 							});
