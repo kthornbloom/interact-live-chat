@@ -73,6 +73,7 @@
 	min-height: 150px;
 }
 
+
 textarea {
 	width:100%;
 	outline:none;
@@ -97,6 +98,12 @@ textarea {
 	border-radius:3px;
 	margin-right:15px;
 	position: relative;
+}
+
+.join {
+	padding:15px;
+	font-style:italic;
+	color:#ccc;
 }
 
 .message:before {

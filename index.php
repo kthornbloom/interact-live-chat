@@ -20,11 +20,11 @@
 			<div id="chat-area"></div>
 			
 			<form id="send-message-area">
-				<textarea id="sendie" maxlength = '100' placeholder="Your Message"></textarea>
+				<textarea id="sendie" maxlength = '360' placeholder="Your Message"></textarea>
 			</form>
 		</div>
 		</div>
-
+		<div id="name" style="display:none;"></div>
 	<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -35,6 +35,7 @@
 		// ask user for name with popup prompt    
 		var name = prompt("Enter your chat name:", "Guest");
 		$('head').append('<style type="text/css">.'+name+'{text-align:right;} .'+name+' .message {background:tomato;margin-right:auto;margin-left:15px;} .'+name+' .message:before{left:auto;right:4px}</style>');
+
 		
 		// default name is 'Guest'
 		if (!name || name === ' ') {
@@ -49,16 +50,6 @@
 		$(function() {
 		
 			 chat.getState(); 
-
-			 <?php
-/*
-			$chatid = '';
-			if(isset($_GET['chatid'])) {
-				$chatid = htmlspecialchars($_GET["chatid"]);
-				echo "<script type='text/javascript'>alert('$chatid');</script>";
-			}
-*/
-			?>
 			 
 			 // watch textarea for key presses
 			 $("#sendie").keydown(function(event) {  
