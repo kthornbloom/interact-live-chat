@@ -44,6 +44,8 @@
 		
 		// strip tags
 		name = name.replace(/(<([^>]+)>)/ig,"");
+
+		$('#name').html(name); 
 		
 		// kick off chat
 		var chat =  new Chat();

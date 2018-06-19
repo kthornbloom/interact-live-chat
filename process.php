@@ -4,7 +4,6 @@ $function = $_POST['function'];
 
 $log = array();
 $chatid = $_POST['chatid'];
-
 switch ($function) {
 	
 	case ('getState'):
@@ -15,7 +14,9 @@ switch ($function) {
 		break;
 	
 	case ('update'):
-		$state = $_POST['state'];
+		if (isset($_POST['state'])){ 
+			$state = $_POST['state'];
+		}
 		if (file_exists('chat'.$chatid.'.txt')) {
 			$lines = file('chat'.$chatid.'.txt');
 		}

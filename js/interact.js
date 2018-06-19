@@ -29,7 +29,7 @@ function getStateOfChat(){
 				 type: "POST",
 				 url: "process.php",
 				 data: {  
-							'function': 'getState',
+						'function': 'getState',
 						'file': file,
 						'chatid':chatid
 						},
@@ -63,6 +63,7 @@ function initChat(){
 					});
 					document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
 				}
+				
 			 }
 		});
 }
