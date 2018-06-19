@@ -16,6 +16,7 @@ if (url.searchParams.get('chatid')) {
 function Chat () {
 	this.update = updateChat;
 	this.send = sendChat;
+	this.sysMessage = sysMessage;
 	this.getState = getStateOfChat;
 }
 
@@ -63,7 +64,7 @@ function initChat(){
 					});
 					document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
 				}
-				
+
 			 }
 		});
 }
@@ -124,6 +125,24 @@ function sendChat(message, nickname){
 				'function': 'send',
 				'message': message,
 				'nickname': nickname,
+				'file': file,
+				'chatid':chatid
+			 },
+		 dataType: "json",
+		 success: function(data){
+			 updateChat();
+		 },
+	});
+}
+
+//send the message
+function sysMessage(message){
+	$.ajax({
+		 type: "POST",
+		 url: "process.php",
+		 data: {  
+				'function': 'sysMessage',
+				'message': message,
 				'file': file,
 				'chatid':chatid
 			 },

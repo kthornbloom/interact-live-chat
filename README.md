@@ -6,12 +6,13 @@ An open source plugin for website live chat services (under development)
 * Unique Chat IDs & URLs
 * HTML5 notifications
 * Sound on new message
+* System generated messages (user joined, user left);
 
 ##Not Working
-
+* Fix bugs with undefined vars
 
 ##To Do
-* Show user entering room
+* Timestamps
 * GUI name entry instead of JS prompts
 * Flood prevention
 * Admin page

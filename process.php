@@ -53,6 +53,11 @@ switch ($function) {
 			fwrite(fopen('chat'.$chatid.'.txt', 'a'), "<div class='" . $nickname . "'><div class='name'>" . $nickname . "</div><div class='message'>" . $message = str_replace("\n", " ", $message) . "</div></div>" . "\n");
 		}
 		break;
+
+	case ('sysMessage'):
+		$message   = ($_POST['message']);		
+		fwrite(fopen('chat'.$chatid.'.txt', 'a'), "<div class='system-message-wrap'><div class='system-message'>" . $message . "</div></div>" . "\n");
+		break;
 		
 }
 

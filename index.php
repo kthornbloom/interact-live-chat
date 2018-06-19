@@ -45,31 +45,33 @@
 		// strip tags
 		name = name.replace(/(<([^>]+)>)/ig,"");
 
-		$('#name').html(name); 
+		$('#name').html(name);		
+		
 		
 		// kick off chat
 		var chat =  new Chat();
 		$(function() {
 		
-			 chat.getState(); 
+			chat.getState(); 
+			chat.sysMessage(name + ' has joined the chat'); 
 			 
-			 // watch textarea for key presses
-			 $("#sendie").keydown(function(event) {  
+			// watch textarea for key presses
+			$("#sendie").keydown(function(event) {  
 			 
-				 var key = event.which;  
+				var key = event.which;  
 		   
-				 //all keys including return.  
-				 if (key >= 33) {
+				//all keys including return.  
+				if (key >= 33) {
 				   
-					 var maxLength = $(this).attr("maxlength");  
-					 var length = this.value.length;  
+					var maxLength = $(this).attr("maxlength");  
+					var length = this.value.length;  
 					 
-					 // don't allow new content if length is maxed out
-					 if (length >= maxLength) {  
-						 event.preventDefault();  
-					 }  
-				  }  
-});
+					// don't allow new content if length is maxed out
+					if (length >= maxLength) {  
+						event.preventDefault();  
+					}  
+				}  
+			});
 			 // watch textarea for release of key press
 			 $('#sendie').keyup(function(e) {   
 								 
@@ -81,19 +83,17 @@
 					 
 					// send 
 					if (length <= maxLength + 1) { 
-					 
 						chat.send(text, name);  
 						$(this).val("");
-						
 					} else {
-					
 						$(this).val(text.substring(0, maxLength));
-						
-					}   
-					
-					
+					}
 				  }
 			 });
+
+			window.onbeforeunload = function() {
+				chat.sysMessage(name + ' has left the chat');
+			};
 			
 		});
 	</script>
