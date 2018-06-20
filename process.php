@@ -43,6 +43,7 @@ switch ($function) {
 		$nickname  = htmlentities(strip_tags($_POST['nickname']));
 		$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
 		$message   = htmlentities(strip_tags($_POST['message']));
+		$current_date =  date('h:i a');
 		if (($message) != "\n") {
 			
 			if (preg_match($reg_exUrl, $message, $url)) {
@@ -50,13 +51,14 @@ switch ($function) {
 			}
 			
 			
-			fwrite(fopen('chat'.$chatid.'.txt', 'a'), "<div class='" . $nickname . "'><div class='name'>" . $nickname . "</div><div class='message'>" . $message = str_replace("\n", " ", $message) . "</div></div>" . "\n");
+			fwrite(fopen('chat'.$chatid.'.txt', 'a'), "<div class='" . $nickname . "'><div class='name'>" . $nickname . "</div><div class='message'>" . $message = str_replace("\n", " ", $message) . "</div><div class='time'>". $current_date . "</div></div>" . "\n");
 		}
 		break;
 
 	case ('sysMessage'):
-		$message   = ($_POST['message']);		
-		fwrite(fopen('chat'.$chatid.'.txt', 'a'), "<div class='system-message-wrap'><div class='system-message'>" . $message . "</div></div>" . "\n");
+		$message   = ($_POST['message']);
+		$current_date =  date('h:i a');
+		fwrite(fopen('chat'.$chatid.'.txt', 'a'), "<div class='system-message-wrap'><div class='system-message'>" . $current_date . "<br>" . $message . "</div></div>" . "\n");
 		break;
 		
 }

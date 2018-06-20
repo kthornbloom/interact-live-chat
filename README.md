@@ -7,12 +7,13 @@ An open source plugin for website live chat services (under development)
 * HTML5 notifications
 * Sound on new message
 * System generated messages (user joined, user left);
+* Timestamps
 
 ##Not Working
 * Fix bugs with undefined vars
 
 ##To Do
-* Timestamps
+* Send button styles / icons throughout
 * GUI name entry instead of JS prompts
 * Flood prevention
 * Admin page
